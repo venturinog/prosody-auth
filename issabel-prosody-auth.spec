@@ -3,7 +3,7 @@
 Summary: This package is used for issabel-prosody-auth
 Name: issabel-prosody-auth
 Version: 1.0
-Release: 3
+Release: 4
 License: GPL
 Source0: issabel-%{modname}-%{version}.tar.gz
 Group: System/Administration
@@ -18,9 +18,10 @@ Requires: lua
 Requires: prosody
 Requires: nmap-ncat
 Requires: perl-Unix-Syslog
-Requires: perl-Switch
-Requires: perl-Text-Iconv
 Requires: perl-DBD-SQLite
+# perl-Switch and perl-Text-Iconv are gone: Switch is now a native if/elsif and
+# Text::Iconv was replaced by Encode (core). Both were the only two dependencies
+# this package took from EPEL, so it is now buildable from AppStream alone.
 
 %description 
 Package issabel-prosody-auth
